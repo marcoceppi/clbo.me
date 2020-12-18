@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src chrome:; object-src 'none'" />
+    <title>Problem with that pod</title>
+    <link rel="stylesheet" href="chrome://browser/skin/aboutNetError.css" type="text/css" media="all" />
+    <link rel="icon" id="favicon" href="chrome://global/skin/icons/warning.svg" />
+    <link rel="localization" href="browser/aboutCertError.ftl" />
+    <link rel="localization" href="browser/nsserrors.ftl" />
+    <link rel="localization" href="branding/brand.ftl" />
+  </head>
+
+  <body dir="ltr" class="illustrated connectionFailure neterror">
+    <div id="errorPageContainer" class="container">
+      <div id="text-container">
+        <div class="title">
+          <h1 class="title-text" data-l10n-id="connectionFailure-title">CrashLoopBackOff</h1>
+        </div>
+
+        <!-- LONG CONTENT (the section most likely to require scrolling) -->
+        <div id="errorLongContent">
+
+          <!-- Short Description -->
+          <div id="errorShortDesc">
+            <p id="errorShortDescText">Your pod is there, but it's crashing &dash; a lot.</p>
+          </div>
+
+          <!-- Long Description (Note: See netError.dtd for used XHTML tags) -->
+          <div id="errorLongDesc">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
+              <li>The pod could be temporarily unavailable or too busy. Try again in a few
+                moments.</li>
+              <li>If you hand crafted the yaml maybe check it again. You're not an artisanal YAML crafter and bespoke was not the way to go.</li>
+              <li>If you spec looks good check your config map and logs. Computers were a mistake and this is the toll we pay.</li>
+            </ul>
+          </div>
+      <div id="netErrorButtonContainer" class="button-container"><button class="primary try-again" autofocus="true">Try again?</button></div>
+    </div>
+  </body>
+  <script src="chrome://browser/content/aboutNetErrorCodes.js"></script>
+  <script src="chrome://browser/content/aboutNetError.js"></script>
+</html>
